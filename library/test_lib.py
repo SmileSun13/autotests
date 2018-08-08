@@ -1,4 +1,4 @@
-""""Library for testing webservice http://httpbin.org/ with Robot Framework."""
+"""Library for testing webservice http://httpbin.org/ with Robot Framework."""
 
 import requests
 from robot.api import logger
@@ -7,7 +7,7 @@ BASE_URL = 'http://httpbin.org/'
 
 
 def _log_response(response):
-    """"Log additional information to test log.
+    """Log additional information to test log.
 
     Keyword arguments:
     response -- response object (from requests library)
@@ -19,7 +19,9 @@ def _log_response(response):
 
 
 def basic_auth(base_login, base_password, login, password):
-    """"Authentication with Basic-Auth. Returns status code.
+    """Authentication with Basic-Auth.
+
+    Returns status code.
     Path: /basic-auth/:login/:password.
 
     Keyword arguments:
@@ -37,8 +39,9 @@ def basic_auth(base_login, base_password, login, password):
 
 
 def stream(n):
-    """"Get min(n, 100) lines in response body. Returns status code and
-    number of lines in response body.
+    """Get min(n, 100) lines in response body.
+
+    Returns status code and number of lines in response body.
     Path: /stream/:n.
 
     Keyword arguments:
@@ -52,8 +55,9 @@ def stream(n):
 
 
 def get():
-    """"Get GET response's headers. Returns dictionary containing status code
-    and response's headers.
+    """Get GET response's headers.
+
+    Returns dictionary containing status code and response's headers.
     Path: /get.
 
     """
