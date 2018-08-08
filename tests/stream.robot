@@ -29,11 +29,11 @@ Failed Stream Check
 Check If Returned Number Of Lines Is Correct
 	[Documentation]	Проверка количества строк в ответе
 	[Arguments]	${parameter}	${expected_number_of_lines}
-	${status}	${result}=	Stream	${parameter}
+	${status}	${result}=	Wait Until Keyword Succeeds		10x	200ms	Stream	${parameter}
 	Run Keyword If	${status} == ${OK}	Should Be Equal As Integers		${result}	${expected_number_of_lines}
 
 Check If Given Argument Raises Error
 	[Documentation]	Проверка, вернет ли запрос код возврата ошибки при некорректном аргументе
 	[Arguments]	${parameter}
-	${status}	${result}=	Stream	${parameter}
+	${status}	${result}=	Wait Until Keyword Succeeds		10x	200ms	Stream	${parameter}
 	Should Not Be Equal As Integers		${status}	${OK}

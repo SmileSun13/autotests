@@ -25,13 +25,13 @@ Failed Authentication
 Authentication With Valid Credentials
 	[Documentation]	Проверка при правильных данных
 	[Arguments]	${login}	${password}
-	${status}=	Basic Auth	${login}	${password}	${login}	${password}
+	${status}=	Wait Until Keyword Succeeds		10x	200ms	Basic Auth	${login}	${password}	${login}	${password}
 	Should Be Equal As Integers		${status}	${OK}
 
 Authentication With Invalid Credentials
 	[Documentation]	Проверка при неправильных или недостаточных данных
 	[Arguments]	${base_login}	${base_password}	${login}	${password}
-	${status}=	Basic Auth	${base_login}	${base_password}	${login}	${password}
+	${status}=	Wait Until Keyword Succeeds		10x	200ms	Basic Auth	${base_login}	${base_password}	${login}	${password}
 	Should Not Be Equal As Integers		${status}	${OK}
 
 *** Variables ***
